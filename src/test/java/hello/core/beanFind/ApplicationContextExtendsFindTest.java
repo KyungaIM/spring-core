@@ -3,7 +3,6 @@ package hello.core.beanFind;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
-import hello.core.member.MemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -34,11 +33,11 @@ public class ApplicationContextExtendsFindTest {
     @Test
     @DisplayName("특정 타입을 모두 조회")
     void findAllBeanByType() {
-        Map<String, MemberRepository> beans = ac.getBeansOfType(MemberRepository.class);
+        Map<String, DiscountPolicy> beans = ac.getBeansOfType(DiscountPolicy.class);
         for(String key : beans.keySet()){
             System.out.println("key = "+ key+"value = "+beans.get(key));
         }
-        Assertions.assertEquals(beans.size(),2);
+        Assertions.assertEquals(2,beans.size());
     }
 
     @Configuration

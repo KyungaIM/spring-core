@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
     @Bean
-    public MemberService memberService(){
+    public static MemberService memberService(){
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
-    MemberRepository memberRepository(){
+    static MemberRepository memberRepository(){
         return new MemoryMemberRepository();
     }
     @Bean

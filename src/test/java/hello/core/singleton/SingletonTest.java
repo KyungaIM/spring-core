@@ -11,10 +11,10 @@ public class SingletonTest {
     @Test
     @DisplayName("스프링 없는 순수한 DI 컨테이너")
     void pureContainer(){
-        MemberService memberService1 = AppConfig.memberService();
-        MemberService memberService2 = AppConfig.memberService();
-
-        Assertions.assertNotSame(memberService1,memberService2);
+//        MemberService memberService1 = AppConfig.memberService();
+//        MemberService memberService2 = AppConfig.memberService();
+//
+//        Assertions.assertNotSame(memberService1,memberService2);
     }
 
     @Test

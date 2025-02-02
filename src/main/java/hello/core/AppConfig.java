@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
     @Bean
-    public static MemberService memberService(){
+    public MemberService memberService(){
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
-    static MemberRepository memberRepository(){
+    public MemberRepository memberRepository(){
         return new MemoryMemberRepository();
     }
     @Bean
@@ -26,7 +26,7 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
-    DiscountPolicy discountPolicy(){
+    public DiscountPolicy discountPolicy(){
         return new FixDiscountPolicy();
     }
 }
